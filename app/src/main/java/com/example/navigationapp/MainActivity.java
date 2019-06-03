@@ -1,9 +1,9 @@
 package com.example.navigationapp;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -74,18 +74,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 String resourceName = getResources().getResourceName(destination.getId());
-                Log.e("xxx", resourceName);
+                Toast.makeText(MainActivity.this, resourceName, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void setupActionBar(NavController navController, AppBarConfiguration appBarConfig) {
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfig);
     }
 
     private void setupBottomNavMenu(NavController navController) {
         BottomNavigationView bottomNav = findViewById(R.id.nav_view);
         NavigationUI.setupWithNavController(bottomNav, navController);
-    }
-
-    private void setupActionBar(NavController navController, AppBarConfiguration appBarConfig) {
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfig);
     }
 
     @Override

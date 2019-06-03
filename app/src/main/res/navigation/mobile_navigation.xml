@@ -21,35 +21,33 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/flow_step_one_dest"
+        android:name="com.example.navigationapp.FlowStepFragment"
+        tools:layout="@layout/flow_step_one_fragment">
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/flow_step_two_dest" />
+    </fragment>
+
     <!--<fragment-->
-    <!--android:id="@+id/flow_step_one_dest"-->
-    <!--android:name="com.example.android.codelabs.navigation.FlowStepFragment"-->
-    <!--tools:layout="@layout/flow_step_one_fragment">-->
-    <!--<argument-->
-    <!--android:name="flowStepNumber"-->
-    <!--app:argType="integer"-->
-    <!--android:defaultValue="1"/>-->
+        <!--android:id="@+id/flow_step_two_dest"-->
+        <!--android:name="com.example.android.codelabs.navigation.FlowStepFragment"-->
+        <!--tools:layout="@layout/flow_step_two_fragment">-->
 
-    <!--<action-->
-    <!--android:id="@+id/next_action"-->
-    <!--app:destination="@+id/flow_step_two_dest">-->
-    <!--</action>-->
-    <!--</fragment>-->
+        <!--<argument-->
+            <!--android:name="flowStepNumber"-->
+            <!--android:defaultValue="2"-->
+            <!--app:argType="integer" />-->
 
-    <!--<fragment-->
-    <!--android:id="@+id/flow_step_two_dest"-->
-    <!--android:name="com.example.android.codelabs.navigation.FlowStepFragment"-->
-    <!--tools:layout="@layout/flow_step_two_fragment">-->
-
-    <!--<argument-->
-    <!--android:name="flowStepNumber"-->
-    <!--app:argType="integer"-->
-    <!--android:defaultValue="2"/>-->
-
-    <!--<action-->
-    <!--android:id="@+id/next_action"-->
-    <!--app:popUpTo="@id/home_dest">-->
-    <!--</action>-->
+        <!--<action-->
+            <!--android:id="@+id/next_action"-->
+            <!--app:popUpTo="@id/home_dest"></action>-->
     <!--</fragment>-->
 
     <fragment
